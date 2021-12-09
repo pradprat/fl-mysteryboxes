@@ -1,0 +1,484 @@
+@import url('./root.css');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+.mobile {
+    display: none;
+}
+
+.background {
+    background-color: #17161b;
+}
+
+.background img {
+    width: 100%;
+    opacity: 0.05;
+    filter: blur(3px);
+}
+
+.app {
+    display: grid;
+    position: absolute;
+    align-content: space-between;
+    grid-template: 9.2593vh 67.1296vh 5.5556vh/1fr;
+    grid-template-areas:
+        'header'
+        'main'
+        'footer';
+    width: 100%;
+    max-width: 94.7917vw;
+    height: 100%;
+    max-height: 92.5926vh;
+}
+
+.openingCrate {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    object-fit: fill;
+}
+
+.app header {
+    display: grid;
+    position: relative;
+    place-items: center;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+        "navbar-l navbar-r";
+    width: 100%;
+    height: 100%;
+    grid-area: header;
+}
+
+.app header .navbar-btns-l .ck-logo {
+    display: grid;
+    position: relative;
+    justify-self: flex-start;
+    width: 100%;
+    max-width: 10vw;
+}
+
+.app header .navbar-btns-l,.navbar-btns-r {
+    display: flex;
+    position: relative;   
+    place-items: center;
+    gap: 1.3021vw;
+}
+
+.app header .navbar-btns-l {
+    justify-self: flex-start;
+    grid-area: navbar-l;
+}
+
+.app header .navbar-btns-r {
+    justify-self: flex-end;
+    grid-area: navbar-r;
+}
+
+
+.app header .navbar-btns-l,.navbar-btns-r a,a:visited {
+    color: var(--verdeDark);
+}
+
+.app header .navbar-btns-l .btn-boxes.btn {
+    display: grid;
+    position: relative;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    height: 100%;
+    border-radius: 0.2604vw;
+    padding: 1.3889vh 0.7813vw;
+    gap: 0.5208vw;
+    background-color: var(--verdeLight);
+}
+
+.app header .navbar-btns-l .btn-boxes.btn:hover {
+    transition: all 0.2s;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.app header .navbar-btns-l,.navbar-btns-r .btn .btn-text {
+    width: 100%;
+    justify-self: flex-start;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.9375vw;
+    font-weight: 700;
+    color: var(--verdeDark);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-right: 0.2604vw;
+    letter-spacing: 0;
+}
+
+.app header .navbar-btns-r .btn-account.btn {
+    display: grid;
+    position: relative;
+    grid-auto-flow: column;
+    align-items: center;
+    justify-content: center;
+    width: fit-content;
+    max-width: 15.625vw;
+    height: 100%;
+    border-radius: 0.5208vw;
+    padding: 1.3889vh 0.7813vw;
+    gap: 0.9259vh 0.5208vw;
+    background-color: var(--verdeLight);
+}
+
+.app header .navbar-btns-r .btn-account.btn i {
+    justify-self: center;
+    font-size: 1.25vw;
+    color: var(--verdeDark);
+    margin: 0;
+}
+
+.app header .navbar-btns-r .btn-account.btn svg {
+    justify-self: center;
+    width: 1.25vw;
+    fill: var(--verdeDark);
+    margin: 0;
+}
+
+
+.app header .btn:hover {
+    transition: all 0.2s;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.app main {
+    display: grid;
+    position: relative;
+    align-self: flex-start;
+    justify-self: center;
+    justify-content: space-between;
+    grid-template: 0fr 1fr/1fr;
+    grid-template-areas:
+        "m-header"
+        "m-content";
+    width: 100%;
+    height: 100%;
+    gap: 4.6296vh 2.6042vw;
+    grid-area: main;
+}
+
+.app main .m-header {
+    display: grid;
+    grid-auto-flow: row;
+    place-items: center;
+    align-self: flex-start;
+    justify-self: center;
+    gap: 1.3021vw;
+    position: relative;
+    width: 59.8958vw;
+    height: 9.2593vh;
+    grid-area: m-header;
+}
+
+.app main .m-header h1 {
+    display: flex;
+    height: auto;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 5.1852vh;
+    font-weight: 600;
+     color: #f2f3f5;
+    text-align: center;
+    line-height: 80%;
+}
+
+.app main .m-header p {
+    display: flex;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 2.3148vh;
+    font-weight: bold;
+    color: #f2f3f5;
+    text-align: center;
+    line-height: 120%;
+}
+
+.app main .m-content {
+    display: grid;
+    grid-auto-flow: column;
+    position: relative;
+    place-items: center;
+    align-self: center;
+    width: 100%;
+    height: 46.2963vh;
+    gap: 2.3148vh 1.3021vw;
+    grid-area: m-content;
+}
+
+.app main .m-content .cnt-box {
+    display: flex;
+    position: relative;
+    flex-direction: column;
+    place-items: center;
+    width: 100%;
+    max-width: 26.0417vw;
+    height: 41.6667vh;
+    max-height: 100%;
+    background-color: #181818;
+    border-radius: 0.7813vw;
+    gap: 1.3889vh 0.7813vw;
+    padding: 2.3148vh 1.3021vw;
+    border: 0.2083vw solid var(--pretoDark);
+    box-sizing: content-box;
+}
+
+.app main .m-content .cnt-box .bx-photo {
+    display: flex;
+    place-items: center;
+    position: relative;
+    width: 100%;
+    max-width: 16.6667vw;
+    height: 100%;
+    max-height: 18.5185vh;
+}
+
+.app main .m-content .cnt-box .bx-photo img {
+    width: 100%;
+    height: auto;
+}
+
+.app main .m-content .cnt-box .bx-title {
+    display: flex;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.6667vw;
+    font-weight: 900;
+    color: #f2f3f5;
+    text-align: start;
+}
+
+.app main .m-content .cnt-box .bx-raritys {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    max-height: 3.2407vh;
+    gap: 0.5208vw;
+}
+
+.app main .m-content .cnt-box .bx-raritys .rty-box {
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 3.6458vw;
+    height: 100%;
+    border-radius: 0.463vh 0.2604vw;
+
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.9375vw;
+    font-weight: 900;
+    text-align: center;
+}
+
+.app main .m-content .cnt-box .bx-label {
+    display: flex;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.1458vw;
+    font-weight: 900;
+    color: #f2f3f5;
+    text-align: start;
+}
+
+.app main .m-content .cnt-box .payment-btns {
+    display: flex;
+    flex-direction: row;
+    place-items: center;
+    justify-content: space-between;
+    width: 100%;
+    height: 100%;
+    gap: 0.7813vw;
+
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.9375vw;
+    font-weight: 900;
+    color: var(--branco);
+    text-align: center;
+}
+
+.app main .m-content .cnt-box .payment-btns .btn{
+    display: flex;
+    place-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 13.0208vw;
+    height: 100%;
+    max-height: 5.5556vh;
+    background-color: #fff;
+    border-radius: 0.2604vw;
+}
+
+.app main .m-content .cnt-box .payment-btns .btn:nth-child(1){
+    font-size: 1.6667vw;
+    color: var(--verdeDark);
+    background-color: var(--verdeLight);
+}
+
+.app main .m-content .cnt-box .payment-btns .btn:nth-child(2){
+    font-size: 1.6667vw;
+    color: var(--amareloDark);
+    background-color: var(--amareloLight);
+}
+
+.app main .m-content .cnt-box .payment-btns .btn:hover {
+    transition: all 0.3s;
+    transform: scale(1.03);
+    cursor: pointer;
+}
+
+.app footer {
+    display: grid;
+    position: relative;
+    place-items: center;
+    align-self: flex-end;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-areas:
+        "f-contract f-socials f-copyright";
+    width: 100%;
+    height: 100%;
+    max-height: 5.5556vh;
+    grid-area: footer;
+}
+
+.app footer .f-contract {
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-start;
+    flex-direction: column;
+
+    display: flex;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8333vw;
+    font-weight: 900;
+     color: #f2f3f5;
+    text-align: start;
+    line-height: auto;
+    grid-area: f-contract;
+}
+
+.app footer .f-contract .cnt-address {
+    color: var(--verdeLight);
+}
+
+.app footer .f-socials {
+    display: flex;
+    align-self: flex-end;
+    justify-content: space-between;
+    justify-self: center;
+    place-items: center;
+    flex-direction: column;
+    height: 100%;
+    grid-area: f-socials;
+}
+
+.app footer .f-socials .sc-title {
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.1458vw;
+    font-weight: 800;
+    color: var(--verdeLight);
+    line-height: auto;
+    text-align: center;
+}
+
+.app footer .f-socials .sc-slots {
+    display: flex;
+    flex-direction: row;
+    justify-self: flex-end;
+    gap: 2.7778vh 1.5625vw;
+}
+
+.app footer .f-socials .sc-slots .sc-box {
+    display: grid;
+    gap: 0.5208vw;
+    grid-auto-flow: column;
+    place-items: center;
+    width: fit-content;
+    color: #f2f3f5;
+}
+
+.app footer .f-socials .sc-slots .sc-box:hover {
+    transition: all 0.3s;
+    transform: scale(1.03);
+    cursor: pointer;
+    color: var(--verdeLight);
+}
+
+.app footer .f-socials .sc-slots .sc-box .sc-icon {
+    display: flex;
+    width: 1.1458vw;
+    height: fit-content;
+    font-size: 1.1458vw;
+    fill: var(--branco);
+}
+
+.app footer .f-socials .sc-slots .sc-box .sc-text {
+    display: flex;
+    justify-self: flex-start;
+    width: 100%;
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 1.25vw;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    line-height: auto;
+}
+
+.app footer .f-copyright {
+    display: flex;
+    align-self: flex-end;
+    justify-self: flex-end;
+    flex-direction: column;
+
+    font-family: 'Chakra Petch', sans-serif;
+    font-size: 0.8333vw;
+    font-weight: 700;
+     color: #f2f3f5;
+    text-align: start;
+    grid-area: f-copyright;
+}
+
+.common {
+    color: #737373;
+    background-color: #C4C4C4;
+}
+
+.uncommon {
+    color: #2A7A0F;
+    background-color: #78FD4C;
+}
+
+.rare {
+    color: #0F3A7A;
+    background-color: #4C73FD;
+}
+
+.epic {
+    color: #431C76;
+    background-color: #9039FF;
+}
+
+.legendary {
+    color: #20656A;
+    background-color: #28D7FD;
+}
+
+.mysthic {
+    color: #695B0F;
+    background-color: #FFD80D;
+}
+
+.exotic {
+    color: #278686;
+    background-color: #AFFFFF;
+}

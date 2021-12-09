@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="google-site-verification" content="arLbc4Y9egFNVQQXdv5d8w8YJc2xqxOy8Yp6bVq8YCc" />
+    <title>CryptoKiller - Buy your CPK Crate</title>
+    <link rel="shortcut icon" href="./assets/img/favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/root.css">
+    <link rel="stylesheet" href="./assets/css/boxes.css">
+    <link rel="stylesheet" href="./assets/css/custom.css">
+    <!-- <script type="text/javascript" src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
+        <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js" defer></script>
+        <script src="https://unpkg.com/moralis/dist/moralis.js" defer></script> -->
+    <script src="./assets/js/icons.js" defer></script>
+
+
+    <script src="https://raw.githubusercontent.com/MikeMcl/bignumber.js/master/bignumber.min.js"></script>
+
+    <!-- Bootstrap CSS -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+                integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Krona+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/css/uikit.min.css" />
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.9.4/dist/js/uikit-icons.min.js"></script>
+
+    <script src="https://livejs.com/live.js"></script>
+
+    <script src="https://kit.fontawesome.com/fb75b124b4.js" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/web3@latest/dist/web3.min.js"></script>
+    <script src="https://unpkg.com/moralis/dist/moralis.js"></script>
+    <script
+        src="https://github.com/WalletConnect/walletconnect-monorepo/releases/download/1.6.2/web3-provider.min.js"></script>
+
+    <script src="https://livejs.com/live.js"></script>
+
+    <script src="main.js"></script>
+    <script src="abi.js"></script>
+
+    <link href="//cdn.jsdelivr.net/npm/@sweetalert2/theme-dark@4/dark.css" rel="stylesheet">
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.js"></script>
+</head>
+
+<body>
+    <div class="background">
+        <img src="https://cdn.discordapp.com/attachments/800922883697541223/914016749890973696/War-Of-The-Worlds-Wallpaper-25-1300-X-699-stmed.net.jpg"
+            alt="">
+    </div>
+    <div class="app" id="app">
+
+        <header>
+            <div id="crate-modal-sections" uk-modal>
+                <div id="crate-modal"
+                    class="uk-modal-dialog uk-width-auto uk-height-auto uk-margin-auto-vertical bg-transparent">
+                    <!-- <img src="./assets/img/mercenaries/epic.png" alt="" srcset="" class="video-open-crate"> -->
+                    <!-- <video id="crate-video" src="./assets/videos/deluxe.webm" controls playsinline uk-video
+                        class="bg-transparent video-open-crate"></video> -->
+                </div>
+            </div>
+            <div class="navbar-btns-l">
+                <a href="../home" target="_blank">
+                    <img src="./assets/img/logo.png" alt="ck-logo" class="ck-logo">
+                </a>
+                <a href="./index.html">
+                    <div class="btn-boxes btn">
+                        <span class="btn-text">Buy Boxes</span>
+                    </div>
+                </a>
+                <a href="./inventory.html">
+                    <div class="btn-boxes btn">
+                        <span class="btn-text">Your Inventory</span>
+                    </div>
+                </a>
+                <a href="#crate-modal-sections" uk-toggle>
+                    <div class="btn-boxes btn">
+                        <span class="btn-text">Open Modal</span>
+                    </div>
+                </a>
+            </div>
+            <div class="navbar-btns-r">
+                <div class="btn-account btn wallet" id="connect" onclick="login();">
+                    <svg class="btn-icon xmlns=" http://www.w3.org/2000/svg" viewBox="0 0 1852 1718">
+                        <defs>
+                            <style>
+                                .cls-1 {
+                                    fill: #121212;
+                                }
+                            </style>
+                        </defs>
+                        <path
+                            d="M1811,836l-35-26,56-53-40-34,56-44-40-30,61-294L1776,75,1190,295l-247-.06L696,295,110,75,17,355,78,649,38,679l56,44L54,757l56,53L75,836l82,98L31,1322l117,408,413-113s70.32,57.64,95,76c35,26,144.71,100,144.71,100h284.58S1195,1719,1230,1693c24.68-18.36,95-76,95-76l413,113,117-408L1729,934ZM542,825.5v-7l-330,96L141,840l39-27-58-55,42-36-55-42,27-20.5-63-303L146,136,804,592.5v11ZM599,1163l134-62,53,117Zm482.59,477.88H804.41L786,1660l18-170,34-22v5l105,.51,105-.51v-5l34,22,18,170ZM1100,1218l53-117,134,62Zm244-399.5v7l-262-222v-11L1740,136l73,220.5-63,303,27,20.5-55,42,42,36-58,55,39,27-71,74.5Z"
+                            transform="translate(-17 -75)" />
+                    </svg>
+                    <span class="btn-text">Login with MetaMask</span>
+
+                </div>
+            </div>
+        </header>
+        <main>
+            <div class="m-header">
+                <h1 class="m-title">CPK Crates Presale</h1>
+                <p class="m-text">Buy your CPK Crates from our first pre sale and get the best NFTs cards.<br>Only 5.000
+                    crates available.</p>
+            </div>
+            <div class="m-content">
+                <div class="cnt-box">
+                    <div class="bx-photo">
+                        <img src="./assets/img/crates/standard.png" alt="crate-standard">
+                    </div>
+                    <span class="bx-title">Crate Standard</span>
+                    <div class="bx-raritys">
+                        <div class="rty-box common">50%</div>
+                        <div class="rty-box uncommon">30%</div>
+                        <div class="rty-box rare">15%</div>
+                        <div class="rty-box epic">5%</div>
+                        <div class="rty-box legendary">0%</div>
+                        <div class="rty-box mysthic">0%</div>
+                        <div class="rty-box exotic">0%</div>
+                    </div>
+                    <span class="bx-label">Select you payment method:</span>
+                    <div class="payment-btns">
+                        <div id="standardBnbBtn" class="btn-bnb btn" onclick="openStandardBNB();">0.11 BNB</div>
+                        OR
+                        <div id="standardCpkBtn" class="btn-cpk btn" onclick="openStandardCPK();">650 CPK</div>
+                    </div>
+                </div>
+                <div class="cnt-box">
+                    <div class="bx-photo">
+                        <img src="./assets/img/crates/deluxe.png" alt="crate-deluxe">
+                    </div>
+                    <span class="bx-title">Crate Deluxe</span>
+                    <div class="bx-raritys">
+                        <div class="rty-box common">1%</div>
+                        <div class="rty-box uncommon">50%</div>
+                        <div class="rty-box rare">35.9%</div>
+                        <div class="rty-box epic">10%</div>
+                        <div class="rty-box legendary">2%</div>
+                        <div class="rty-box mysthic">1%</div>
+                        <div class="rty-box exotic">0.1%</div>
+                    </div>
+                    <span class="bx-label">Select you payment method:</span>
+                    <div class="payment-btns">
+                        <div id="deluxeBnbBtn" class="btn-bnb btn" onclick="openDeluxeBNB();">0.21 BNB</div>
+                        OR
+                        <div id="deluxeCpkBtn" class="btn-cpk btn" onclick="openDeluxeCPK();">1200 CPK</div>
+                    </div>
+                </div>
+                <div class="cnt-box">
+                    <div class="bx-photo">
+                        <img src="./assets/img/crates/ultimate.png" alt="crate-ultimate">
+                    </div>
+                    <span class="bx-title">Crate Ultimate</span>
+                    <div class="bx-raritys">
+                        <div class="rty-box common">0%</div>
+                        <div class="rty-box uncommon">0%</div>
+                        <div class="rty-box rare">50%</div>
+                        <div class="rty-box epic">30%</div>
+                        <div class="rty-box legendary">10%</div>
+                        <div class="rty-box mysthic">7%</div>
+                        <div class="rty-box exotic">3%</div>
+                    </div>
+                    <span class="bx-label">Select you payment method:</span>
+                    <div class="payment-btns">
+                        <div id="ultimateCpkBtn" class="btn-cpk btn">SOLD OUT</div>
+                        OR
+                        <div id="ultimateCpkBtn" class="btn-cpk btn">SOLD OUT</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+        <footer>
+            <div class="f-contract">
+                <span class="cnt-title">Contract address:</span>
+                <span class="cnt-address">0xf10499b90bcC14ebA723C7Dabe51bfaE9fB0B681</span>
+            </div>
+            <div class="f-socials">
+                <span class="sc-title">Our Social Medias</span>
+                <div class="sc-slots">
+                    <a href="https://cryptokiller.online/home/" target="_blank">
+                        <div class="sc-box">
+                            <i class="fal fa-globe sc-icon"></i>
+                            <span class="sc-text">WebSite</span>
+                        </div>
+                    </a>
+                    <a href="https://discord.gg/zeZe2vMGwa" target="_blank">
+                        <div class="sc-box">
+                            <i class="fab fa-discord sc-icon"></i>
+                            <span class="sc-text">Discord</span>
+                        </div>
+                    </a>
+                    <a href="https://twitter.com/NFTcryptokiller" target="_blank">
+                        <div class="sc-box">
+                            <i class="fab fa-twitter sc-icon"></i>
+                            <span class="sc-text">Twitter</span>
+                        </div>
+                    </a>
+                    <a href="https://t.me/cryptoKillerNft" target="_blank">
+                        <div class="sc-box">
+                            <i class="fab fa-telegram-plane sc-icon"></i>
+                            <span class="sc-text">Telegram</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <span class="f-copyright">2021 © CryptoKiller. All rights reserved.</span>
+        </footer>
+    </div>
+    <!-- <video src="./assets/videos/crate.webm" class="openingCrate" autoplay controls></video> -->
+
+    <script src="./assets/js/script.js" defer></script>
+    <script>
+        //For Firefox we have to handle it in JavaScript 
+        var vids = $('#crate-video');
+        $.each(vids, function () {
+            this.controls = false;
+        });
+        //Loop though all Video tags and set Controls as false
+        $('#crate-video').click(function () {
+            // //console.log(this); 
+            // if (this.paused) {
+            //     this.play();
+            // } else {
+            //     this.pause();
+            // }
+            this.currentTime = this.duration
+            // this.stop();
+        });
+
+        // UIkit.modal(('#modal-sections')).show();
+        UIkit.util.on('#crate-modal-sections', 'beforeshow', function () {
+            $('#crate-video')[0].currentTime = 0
+        });
+        console.log();
+        
+
+    </script>
+</body>
+
+</html>

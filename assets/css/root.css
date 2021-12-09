@@ -1,0 +1,143 @@
+@import url('./all.css');
+@import url('./background.css');
+
+@font-face {
+    font-family: 'Burbank Big Condensed';
+    src: url('../font/BurbankBigCondensed-Black.woff2') format('woff2'),
+        url('../font/BurbankBigCondensed-Black.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Burbank Big';
+    src: url('../font/BurbankBigRegular-Black.woff2') format('woff2'),
+        url('../font/BurbankBigRegular-Black.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Burbank Big Rg Bd';
+    src: url('../font/BurbankBigRegular-Bold.woff2') format('woff2'),
+        url('../font/BurbankBigRegular-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Burbank Small';
+    src: url('../font/BurbankSmall-Bold.woff2') format('woff2'),
+        url('../font/BurbankSmall-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Burbank Small';
+    src: url('../font/BurbankSmall-Black.woff2') format('woff2'),
+        url('../font/BurbankSmall-Black.woff') format('woff');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Burbank Big Cd Bd';
+    src: url('../font/BurbankBigCondensed-Bold.woff2') format('woff2'),
+        url('../font/BurbankBigCondensed-Bold.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Burbank Small';
+    src: url('../font/BurbankSmall-Medium.woff2') format('woff2'),
+        url('../font/BurbankSmall-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+input[type="number"] {
+    -webkit-appearance: textfield;
+       -moz-appearance: textfield;
+            appearance: textfield;
+  }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+    -webkit-appearance: none;
+}
+
+:root {
+    --preto: #202020;
+    --pretoDark: #151515;
+    --cinza: #303030;
+    --cinzaDark: #737373;
+    --cinzaLight: #C4C4C4;
+    --branco: #ffffffff;
+
+    --marrom: #3A200B;
+    --marromLight: #4F2A0D;
+
+    --verde: #2FA122;
+	--verdeDark: #156B0B;
+	--verdeLight: #5BD04E;
+
+    --amarelo: #FF9E2C;
+	--amareloDark: #BF7722;
+	--amareloLight: #FFC122;
+
+    --laranja: #e8a119ff;
+	--laranjaDark: #69480cff;
+
+    --vermelho: #CA2E2E;
+	--vermelhoDark: #8a1919;
+    --vermelhoLight: #E23E3E;
+
+    --azul: #12B1FF;;
+	--azulDark: #248FF2;
+	--azulLight: #117EFF;
+
+    font-size: 62.5%;
+}
+
+* {
+    margin: 0;
+    letter-spacing: 0.0521vw;
+    outline: none;
+    text-decoration: none;
+}
+
+html {
+    /* -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none; */
+    /* overflow: hidden; */
+}
+
+body {
+    display: grid;
+    position: relative;
+    place-items: center;
+    width: 100vw;
+    height: 100vh;
+    margin: 0;
+    font-size: 1.6rem;
+    background-color: #17161b;
+}
