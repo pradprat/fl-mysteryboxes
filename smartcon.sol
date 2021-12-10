@@ -31,9 +31,9 @@ contract CryptoKillerNFT_MysteryBoxINCL is ERC721URIStorage {
     uint256 crateDeluxPrice = 0.21 * 10**18;
     uint256 crateUltimatePrice = 0.53 * 10**18;
 
-    uint256 crateStandardPriceCPK = 650 * 10**18;
-    uint256 crateDeluxPriceCPK = 1200 * 10**18;
-    uint256 crateUltimatePriceCPK = 3000 * 10**18;
+    uint256 crateStandardPriceCK = 650 * 10**18;
+    uint256 crateDeluxPriceCK = 1200 * 10**18;
+    uint256 crateUltimatePriceCK = 3000 * 10**18;
 
     
     uint256 standardBoxCount = 0;
@@ -46,7 +46,8 @@ contract CryptoKillerNFT_MysteryBoxINCL is ERC721URIStorage {
 
     address payable adrPandao = payable(0xd8b6AB7306c194e3DC87071Aed0b70f2e67BADc6);
     address payable adrVscorpio = payable(0xe3DF2c1b3204bBE31dc9Dcd49EF6AbE8D138b5ea);
-    address ERC20_Address = 0xf10499b90bcC14ebA723C7Dabe51bfaE9fB0B681; // Crypter token address
+    // address ERC20_Address = 0xf10499b90bcC14ebA723C7Dabe51bfaE9fB0B681; // Crypter token address (CPK)
+    address ERC20_Address = 0x0dA754900dF8634e83C4c993e5CF28D0B15aff9c; // Crypter token address
 
     string commonURI = "https://cloudflare-ipfs.com/ipfs/QmSQ8NTSYwiQGQgpwVAPjHrUKaVtXbDaAGAz5SrCwN4Eq6";
     string uncommonURI = "https://cloudflare-ipfs.com/ipfs/QmPMr1bpH84TqqWr2fCPW5m1bDULWfSzVDLD7MqdE8bw82";
@@ -350,17 +351,17 @@ contract CryptoKillerNFT_MysteryBoxINCL is ERC721URIStorage {
 
 
 
-    function openStandardBoxCPK() external payable returns (bool)
+    function openStandardBoxCK() external payable returns (bool)
     {
         emit StandardBoxOpen(msg.sender);
 
         require(standardBoxCount < standardBoxLimit, "Mystery Box capacity is over");  
 
-        uint256 cpkPandao;
-        uint256 cpkVscorpio;
+        uint256 ckPandao;
+        uint256 ckVscorpio;
 
-        cpkPandao = crateStandardPriceCPK.mul(95).div(100);
-        cpkVscorpio = crateStandardPriceCPK.mul(5).div(100);
+        ckPandao = crateStandardPriceCK.mul(95).div(100);
+        ckVscorpio = crateStandardPriceCK.mul(5).div(100);
 
         if(enforceTimelimit) require(lastBoxUnlock[msg.sender] <= block.timestamp - 10, "You have to wait 10 seconds before opening another box");
         if(enforceBoxPrice) 
@@ -369,13 +370,13 @@ contract CryptoKillerNFT_MysteryBoxINCL is ERC721URIStorage {
         Crypter(ERC20_Address).transferFrom(
                     msg.sender,
                     adrPandao,
-                    cpkPandao
+                    ckPandao
             );
 
         Crypter(ERC20_Address).transferFrom(
                     msg.sender,
                     adrVscorpio,
-                    cpkVscorpio
+                    ckVscorpio
             );
         }
         
@@ -414,17 +415,17 @@ contract CryptoKillerNFT_MysteryBoxINCL is ERC721URIStorage {
                 
     }
 
-    function openDeluxeBoxCPK() external payable returns (bool)
+    function openDeluxeBoxCK() external payable returns (bool)
     {
 
 
         emit DeluxeBoxOpen(msg.sender);
 
-        uint256 cpkPandao;
-        uint256 cpkVscorpio;
+        uint256 ckPandao;
+        uint256 ckVscorpio;
 
-        cpkPandao = crateDeluxPriceCPK.mul(95).div(100);
-        cpkVscorpio = crateDeluxPriceCPK.mul(5).div(100);
+        ckPandao = crateDeluxPriceCK.mul(95).div(100);
+        ckVscorpio = crateDeluxPriceCK.mul(5).div(100);
 
 
         if(enforceTimelimit) require(lastBoxUnlock[msg.sender] <= block.timestamp - 10, "You have to wait 10 seconds before opening another box");
@@ -433,13 +434,13 @@ contract CryptoKillerNFT_MysteryBoxINCL is ERC721URIStorage {
         Crypter(ERC20_Address).transferFrom(
                     msg.sender,
                     adrPandao,
-                    cpkPandao
+                    ckPandao
             );
 
         Crypter(ERC20_Address).transferFrom(
                     msg.sender,
                     adrVscorpio,
-                    cpkVscorpio
+                    ckVscorpio
             );
         }
 
@@ -482,16 +483,16 @@ contract CryptoKillerNFT_MysteryBoxINCL is ERC721URIStorage {
                 
     }
 
-    function openUltimateBoxCPK() external payable returns (bool)
+    function openUltimateBoxCK() external payable returns (bool)
     {
 
         emit UltimateBoxOpen(msg.sender);       
 
-        uint256 cpkPandao;
-        uint256 cpkVscorpio;
+        uint256 ckPandao;
+        uint256 ckVscorpio;
 
-        cpkPandao = crateUltimatePriceCPK.mul(95).div(100);
-        cpkVscorpio = crateUltimatePriceCPK.mul(5).div(100);
+        ckPandao = crateUltimatePriceCK.mul(95).div(100);
+        ckVscorpio = crateUltimatePriceCK.mul(5).div(100);
 
 
         if(enforceTimelimit) require(lastBoxUnlock[msg.sender] <= block.timestamp - 10, "You have to wait 10 seconds before opening another box");
@@ -500,13 +501,13 @@ contract CryptoKillerNFT_MysteryBoxINCL is ERC721URIStorage {
         Crypter(ERC20_Address).transferFrom(
                     msg.sender,
                     adrPandao,
-                    cpkPandao
+                    ckPandao
             );
 
         Crypter(ERC20_Address).transferFrom(
                     msg.sender,
                     adrVscorpio,
-                    cpkVscorpio
+                    ckVscorpio
             );
         }
 

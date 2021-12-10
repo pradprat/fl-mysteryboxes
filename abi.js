@@ -270,7 +270,7 @@ const mysteryAbi = [
     },
     {
         "inputs": [],
-        "name": "openDeluxeBoxCPK",
+        "name": "openDeluxeBoxCK",
         "outputs": [
             {
                 "internalType": "bool",
@@ -296,7 +296,7 @@ const mysteryAbi = [
     },
     {
         "inputs": [],
-        "name": "openStandardBoxCPK",
+        "name": "openStandardBoxCK",
         "outputs": [
             {
                 "internalType": "bool",
@@ -322,7 +322,7 @@ const mysteryAbi = [
     },
     {
         "inputs": [],
-        "name": "openUltimateBoxCPK",
+        "name": "openUltimateBoxCK",
         "outputs": [
             {
                 "internalType": "bool",

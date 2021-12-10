@@ -53,7 +53,7 @@ fetchInventory = async () => {
         token_address: MYSTERY_BOX_CONTRACT,
     };
     const NFTs = await Moralis.Web3API.account.getNFTsForContract(options);
-    console.log(NFTs);
+    console.log('NFTs', NFTs);
     NFTs.result.forEach(nft => {
         console.log(nft);
         $.getJSON(nft.token_uri, function (data) {
@@ -68,43 +68,41 @@ fetchInventory = async () => {
         });
     });
 
-    const BscNFTOwners = Moralis.Object.extend('BscNFTOwners');
-    const query = new Moralis.Query(BscNFTOwners);
-    query.equalTo('owner_of', currentUserSession.attributes.ethAddress);
-    query.equalTo('token_address', MYSTERY_BOX_CONTRACT.toLowerCase());
-    const results = await query.find();
-    results.forEach(result => {
-        console.log(result);
-        $.getJSON(result.attributes.token_uri, function (data) {
-            $('#inventoryBox').append(`
-            <div class="cnt-box">
-                <img src="${data.image}" alt="mercenarie">
-                <span class="bx-name text-white">Mercenary</span>
-                <span class="bx-rarity text-white">${data.rarity}</span>
-            </div>
-        `);
-            console.log(data);
-        });
-    });
+    // const BscNFTOwners = Moralis.Object.extend('BscNFTOwners');
+    // const query = new Moralis.Query(BscNFTOwners);
+    // query.equalTo('owner_of', currentUserSession.attributes.ethAddress);
+    // query.equalTo('token_address', MYSTERY_BOX_CONTRACT.toLowerCase());
+    // const results = await query.find();
+    // console.log("results",results.length);
+    // results.forEach(result => {
+    //     $.getJSON(result.attributes.token_uri, function (data) {
+    //         $('#inventoryBox').append(`
+    //         <div class="cnt-box">
+    //             <img src="${data.image}" alt="mercenarie">
+    //             <span class="bx-name text-white">Mercenary</span>
+    //             <span class="bx-rarity text-white">${data.rarity}</span>
+    //         </div>
+    //     `);
+    //     });
+    // });
 
-    const BscNFTOwnersPending = Moralis.Object.extend('BscNFTOwnersPending');
-    const query2 = new Moralis.Query(BscNFTOwnersPending);
-    query2.equalTo('owner_of', currentUserSession.attributes.ethAddress);
-    query2.equalTo('token_address', MYSTERY_BOX_CONTRACT.toLowerCase());
-    const results2 = await query2.find();
-    results2.forEach(result => {
-        console.log(result);
-        $.getJSON(result.attributes.token_uri, function (data) {
-            $('#inventoryBox').append(`
-            <div class="cnt-box">
-                <img src="${data.image}" alt="mercenarie">
-                <span class="bx-name text-white">Mercenary</span>
-                <span class="bx-rarity text-white">${data.rarity}</span>
-            </div>
-        `);
-            console.log(data);
-        });
-    });
+    // const BscNFTOwnersPending = Moralis.Object.extend('BscNFTOwnersPending');
+    // const query2 = new Moralis.Query(BscNFTOwnersPending);
+    // query2.equalTo('owner_of', currentUserSession.attributes.ethAddress);
+    // query2.equalTo('token_address', MYSTERY_BOX_CONTRACT.toLowerCase());
+    // const results2 = await query2.find();
+    // console.log("results2",results2.length);
+    // results2.forEach(result => {
+    //     $.getJSON(result.attributes.token_uri, function (data) {
+    //         $('#inventoryBox').append(`
+    //         <div class="cnt-box">
+    //             <img src="${data.image}" alt="mercenarie">
+    //             <span class="bx-name text-white">Mercenary</span>
+    //             <span class="bx-rarity text-white">${data.rarity}</span>
+    //         </div>
+    //     `);
+    //     });
+    // });
 
     //   $("#itemCount").text(invCount);
 };
@@ -132,7 +130,7 @@ openStandardBNB = async () => {
     } else Swal.fire('Please login in order to unlock a box', '', 'error');
 };
 
-openStandardCPK = async () => {
+openStandardCK = async () => {
     if (currentUserSession) {
         try {
             await Moralis.executeFunction({
@@ -147,7 +145,7 @@ openStandardCPK = async () => {
 
             const options = {
                 contractAddress: MYSTERY_BOX_CONTRACT,
-                functionName: 'openStandardBoxCPK',
+                functionName: 'openStandardBoxCK',
                 abi: mysteryAbi,
             };
             const result = await Moralis.executeFunction(options);
@@ -190,7 +188,7 @@ openDeluxeBNB = async () => {
     } else Swal.fire('Please login in order to unlock a box', '', 'error');
 };
 
-openDeluxeCPK = async () => {
+openDeluxeCK = async () => {
     if (currentUserSession) {
         try {
             await Moralis.executeFunction({
@@ -205,7 +203,7 @@ openDeluxeCPK = async () => {
 
             const options = {
                 contractAddress: MYSTERY_BOX_CONTRACT,
-                functionName: 'openDeluxeBoxCPK',
+                functionName: 'openDeluxeBoxCK',
                 abi: mysteryAbi,
             };
             await Moralis.executeFunction(options);
@@ -247,7 +245,7 @@ openUltimateBNB = async () => {
     } else Swal.fire('Please login in order to unlock a box', '', 'error');
 };
 
-openUltimateCPK = async () => {
+openUltimateCK = async () => {
     if (currentUserSession) {
         try {
             await Moralis.executeFunction({
@@ -262,7 +260,7 @@ openUltimateCPK = async () => {
 
             const options = {
                 contractAddress: MYSTERY_BOX_CONTRACT,
-                functionName: 'openUltimateBoxCPK',
+                functionName: 'openUltimateBoxCK',
                 abi: mysteryAbi,
             };
             await Moralis.executeFunction(options);
