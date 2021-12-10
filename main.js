@@ -2,7 +2,8 @@ const appId = 'PpFKYr08Bs3Jt3uJ2DSgl7bzgyZLwDloijGWu2yO';
 const serverUrl = 'https://9emw51mxgeqk.usemoralis.com:2053/server';
 
 const MYSTERY_BOX_CONTRACT = '0x673B239a310578a74D3D00cbd1dB75AA9751E901';
-const ERC20_CONTRACT = '0xf10499b90bcC14ebA723C7Dabe51bfaE9fB0B681';
+const ERC20_CONTRACT = '0x0dA754900dF8634e83C4c993e5CF28D0B15aff9c'; //CK
+// const ERC20_CONTRACT = '0xf10499b90bcC14ebA723C7Dabe51bfaE9fB0B681'; //CPK
 const NETWORK = 'bsc';
 
 Moralis.start({ serverUrl, appId });
@@ -76,7 +77,6 @@ fetchInventory = async () => {
         console.log(result);
         $.getJSON(result.attributes.token_uri, function (data) {
             $('#inventoryBox').append(`
-        
             <div class="cnt-box">
                 <img src="${data.image}" alt="mercenarie">
                 <span class="bx-name text-white">Mercenary</span>
@@ -96,7 +96,6 @@ fetchInventory = async () => {
         console.log(result);
         $.getJSON(result.attributes.token_uri, function (data) {
             $('#inventoryBox').append(`
-        
             <div class="cnt-box">
                 <img src="${data.image}" alt="mercenarie">
                 <span class="bx-name text-white">Mercenary</span>
@@ -151,7 +150,8 @@ openStandardCPK = async () => {
                 functionName: 'openStandardBoxCPK',
                 abi: mysteryAbi,
             };
-            await Moralis.executeFunction(options);
+            const result = await Moralis.executeFunction(options);
+            console.log(result);
             showOpenCrateAnimation('standard');
             // await Swal.fire(
             //     'Mystery Box unlock successful! Please check inventory in following minutes in order to see what you have won!',
